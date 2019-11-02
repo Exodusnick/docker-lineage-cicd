@@ -167,6 +167,7 @@ for branch in ${BRANCH_NAME//,/ }; do
     fi
 
     # Set up our overlay
+    rm -rf "vendor/$vendor/overlay/microg/"
     mkdir -p "vendor/$vendor/overlay/microg/"
     sed -i "1s;^;PRODUCT_PACKAGE_OVERLAYS := vendor/$vendor/overlay/microg\n;" "vendor/$vendor/config/common.mk"
     
